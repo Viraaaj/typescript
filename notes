@@ -1,0 +1,8 @@
+install package.json: npm init -y
+installation: npm install typescript
+installation globally: npm install -g typescript
+
+ts does not run in browser hence we need to install compiler
+compiler installation: npx tsc | Will give error cause we need ts configuartion file 
+compiler installation specific file: npx tsc filename.ts | Will give error cause we need ts configuartion file 
+After compiling it will automatically create a filename.js and convert out typescript file to javascript
