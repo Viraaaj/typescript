@@ -51,3 +51,17 @@ let allData: {
     name: string;
     age: number;
 }[];
+
+console.log("--------Type inference-------");
+let string = "This is string";
+// string = 12; //Will give error because ts will specify the type if we havent declared and if we try to store value of different type it will give an error
+//Because of type inference featue we dont need to decide type at the type of declaration
+
+console.log("--------Union type-------");
+//We can set different types to variable
+let unionType: string | number | boolean | string[] | { name: string, age: number};
+unionType = "Can use string";
+unionType = 10;
+unionType = true;
+unionType = ["a", "b"];
+unionType = { name: "John", age:10 };
