@@ -2,8 +2,9 @@
 //comples types: arrays, objects
 // function types, parameters
 
+
+
 console.log("---------------------------Primitives in TS------------------------------");
- 
 // let age:number = 12;
 let age: number;
 age = 12;
@@ -14,6 +15,8 @@ username = "John";
 
 let isSuperuser: boolean;
 isSuperuser = true;
+
+
 
 console.log("---------------------------Complex types in TS------------------------------");
 
@@ -28,6 +31,8 @@ numbersArray = [1,2]
 
 let booleansArray: boolean[];
 booleansArray = [true, false]
+
+
 
 console.log("--------Objects-------");
 let anyType: any; //This any will tell ts that you dont want to specify any type you can store anything in that variable
@@ -52,10 +57,14 @@ let allData: {
     age: number;
 }[];
 
+
+
 console.log("--------Type inference-------");
 let string = "This is string";
 // string = 12; //Will give error because ts will specify the type if we havent declared and if we try to store value of different type it will give an error
 //Because of type inference featue we dont need to decide type at the type of declaration
+
+
 
 console.log("--------Union type-------");
 //We can set different types to variable
@@ -65,3 +74,20 @@ unionType = 10;
 unionType = true;
 unionType = ["a", "b"];
 unionType = { name: "John", age:10 };
+
+
+
+console.log("--------Type aliases-------");
+//We can store any type in a variable and reuse that type when declaring same type again and again
+type People = {
+    name: string;
+    age: number;
+}
+
+let object: People;
+object = {
+    name: "John",
+    age: 10
+}
+
+let objectArray: People[];
