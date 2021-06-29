@@ -91,3 +91,28 @@ object = {
 }
 
 let objectArray: People[];
+
+
+
+console.log("---------------------------Functions and types------------------------------");
+function addFunction(a: number, b: number){
+    return a+b
+}
+console.log("addition before:", addFunction(2,3));
+
+//Also here ts will inference the type of function as number cause we are taking both values as number (hover to see)
+// can be also used like:
+function otherMethod(a: number, b: number) : number | string {
+    return a+b
+}
+console.log("Other method:", otherMethod(2,3));
+//here function can return any type as number or string as we declared above
+
+function print(value: any){
+    console.log("print is build in function and hence will give an error:", value);
+}
+
+function printValue(value: any){
+    console.log("Value is:", value);
+}
+//Type of this function is void as it is not returning anything
