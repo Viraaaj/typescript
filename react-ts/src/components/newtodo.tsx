@@ -1,6 +1,8 @@
 import { useRef } from "react";
 
-const Newtodo = () => {
+const Newtodo: React.FC<{ onAddTodo: (textFromFunction: string) => void }> = (
+  props
+) => {
   //While using refs we need to set where we are using ref: eg. input button etc also set starting value
   const todoTextInput = useRef<HTMLInputElement>(null);
 
@@ -16,6 +18,8 @@ const Newtodo = () => {
       //Throw an error
       return;
     }
+
+    props.onAddTodo(enteredText);
   };
 
   return (
