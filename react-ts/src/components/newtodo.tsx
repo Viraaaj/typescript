@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import styles from "./NewTodo.module.css";
+import { TodosContext } from "./../store/todos-context";
 
-const Newtodo: React.FC<{ onAddTodo: (textFromFunction: string) => void }> = (
-  props
-) => {
+const Newtodo: React.FC = () => {
+  const addContext = useContext(TodosContext);
+
   //While using refs we need to set where we are using ref: eg. input button etc also set starting value
   const todoTextInput = useRef<HTMLInputElement>(null);
 
@@ -20,7 +21,8 @@ const Newtodo: React.FC<{ onAddTodo: (textFromFunction: string) => void }> = (
       return;
     }
 
-    props.onAddTodo(enteredText);
+    // props.onAddTodo(enteredText);
+    addContext.addTodo(enteredText);
   };
 
   return (
